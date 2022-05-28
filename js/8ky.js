@@ -361,31 +361,148 @@ function sameCase(a, b){
 /*
  *  How much water do I need?
  */
+
 // My washing machine is an old model that can only handle double the amount of load (or max_load). 
 // If the amount of clothes is more than 2 times the standard amount of load (max_load),
 //  return 'Too much clothes'. 
 // The washing machine also cannot handle any amount of clothes less than load (max_load). 
 // If that is the case, return 'Not enough clothes'.
 
-function howMuchWater(water, load, clothes){
-   if(clothes > load * 2){
-     return 'Too much clothes'
-   } else if(clothes < load) {
-     return 'Not enough clothes'
-   } else {
-     const result =   water * Math.pow(1.1, clothes - load) 
-     const resultToFixed = result.toFixed(2) // add + before
-     return resultToFixed
-   }
+// function howMuchWater(water, load, clothes){
+//    if(clothes > load * 2){
+//      return 'Too much clothes'
+//    } else if(clothes < load) {
+//      return 'Not enough clothes'
+//    } else {
+//      const result =   water * Math.pow(1.1, clothes - load) 
+//      const resultToFixed = result.toFixed(2) // add + before
+//      return resultToFixed
+//    }
    
-} 
+// } 
 
 
 
 
-console.log(howMuchWater(10,10,21))
-console.log(howMuchWater(10,10,2))
-console.log(howMuchWater(10,11,20))
-console.log(typeof (howMuchWater(50,15,29))) // string
+// console.log(howMuchWater(10,10,21))
+// console.log(howMuchWater(10,10,2))
+// console.log(howMuchWater(10,11,20))
+// console.log(typeof (howMuchWater(50,15,29))) // string
 
  
+
+/*
+ *  Convert a Boolean to a String
+ */
+
+
+// function booleanToString(b){
+//   return b.toString()
+// }
+
+// console.log(booleanToString(true))
+
+
+/*
+ *  Define a card suit
+ */
+
+// function defineSuit(card) {
+//   if(card.endsWith('♣')) {
+//     return 'clubs'
+//   } else if(card.endsWith('♦')) {
+//     return 'diamonds'
+//   }else if(card.endsWith('♥')) {
+//     return 'hearts'
+//   }else if(card.endsWith('♠')) {
+//     return 'spades'
+//   } else if(card === '') {
+//     return 'Empty'
+//   }
+// }
+
+// const clubs = '3♣'
+// const diamonds = '3♦'
+// const hearts = '3♥'
+// const spades = '3♠'
+
+// console.log(defineSuit(clubs)); 
+// console.log(defineSuit(diamonds)); 
+// console.log(defineSuit(hearts)); 
+// console.log(defineSuit(spades)); 
+// console.log(defineSuit('')); 
+
+
+/*
+ *  Fundamentals: Return
+ */
+ 
+
+// function add(a,b){
+//   return  a + b
+// }
+
+// function divide(a,b){
+//   return a/b
+// }
+
+// function multiply(a,b){
+//   return a*b
+// }
+
+// function mod(a,b){
+//   return a % b
+// }
+ 
+// function exponent(a,b){
+//   return a ** b
+// }
+  
+// function subt(a,b){
+//   return a - b
+// }
+
+
+
+/*
+ * Enumerable Magic #20 - Cascading Subsets
+ */
+
+
+
+const lst = [3, 5, 8, 13];
+
+// -------- 1-st varian 'for' -------- // 
+
+// function eachCons(array, n) {
+//   let numbers = []
+  
+//   for (let i = 0; i < array.length; i += 1) {
+//       if(i + n > array.length) {
+//         continue
+//       } else {
+//         numbers.push(array.slice(i, i + n))
+//       }
+      
+//   }
+//   return numbers
+// }
+
+ 
+//  console.log(eachCons(lst,1))
+//  console.log(eachCons(lst,2))
+//  console.log(eachCons(lst,3))
+ 
+
+
+ // -------- 2-nd varian 'reduce' -------- // 
+
+// function eachCons(array, n) {
+//   return array.reduce(
+//     (acc, elem, i) =>  (i + n <= array.length)
+//   ? [...acc, array.slice(i, i + n)]
+//   : [...acc],
+//  [],
+//  );
+// }
+// console.log(eachCons(lst,3))
