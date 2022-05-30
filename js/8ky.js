@@ -506,3 +506,22 @@ const lst = [3, 5, 8, 13];
 //  );
 // }
 // console.log(eachCons(lst,3))
+
+
+
+/*
+ * Even or Odd
+ */
+
+
+function even_or_odd(number) {
+  if(number % 2 === 0){
+    console.log('Even');
+  } else {
+    console.log('Odd')
+  }
+}
+
+
+even_or_odd(2)
+even_or_odd(3)
