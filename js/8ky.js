@@ -514,14 +514,195 @@ const lst = [3, 5, 8, 13];
  */
 
 
-function even_or_odd(number) {
-  if(number % 2 === 0){
-    console.log('Even');
-  } else {
-    console.log('Odd')
+// function even_or_odd(number) {
+//   if(number % 2 === 0){
+//     return 'Even';
+//   } else {
+//     return 'Odd';
+//   }
+// }
+
+
+// even_or_odd(2)
+// even_or_odd(3)
+
+
+
+/*
+ * Holiday VI - Shark Pontoon
+ */
+
+// You are given 5 variables;
+
+// sharkDistance = distance from the shark to the pontoon. The shark will eat you if it reaches you before you escape to the pontoon.
+// sharkSpeed = how fast it can move in metres/second.
+// pontoonDistance = how far you need to swim to safety in metres.
+// youSpeed = how fast you can swim in metres/second.
+// dolphin = a boolean, if true, you can half the swimming speed of the shark as the dolphin will attack it.
+// The pontoon, you, and the shark are all aligned in one dimension.
+// If you make it, return "Alive!", if not, return "Shark Bait!".
+
+// function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
+//         let myTime = 0;
+//         let sharkTime = 0;
+//         myTime = pontoonDistance/youSpeed
+//         sharkTime = sharkDistance/sharkSpeed
+//          if(myTime < sharkTime) {
+//            return "Alive!"
+//          } else if(dolphin && myTime/2 < sharkTime) {
+//           return "Alive!"
+//          } else {
+//          return "Shark Bait!"
+//          }
+// }
+
+
+// console.log(shark(12, 50, 4, 8, true))
+// console.log(shark(7, 55, 4, 16, true))
+// console.log(shark(24, 0, 4, 8, true))
+ 
+
+/*
+ * Convert number to reversed array of digits
+ */
+
+// 348597 => [7,9,5,8,4,3]
+// 0 => [0]
+
+// const numbers = 348597
+ 
+// function digitize(n) {
+//   const array = n.toString().split('').map(el => parseInt(el)).reverse()
+//   return array
+// }
+
+// console.log(digitize(numbers))
+
+
+
+/*
+ * Name on billboard
+ */
+
+// You can print your name on a billboard ad. 
+// Find out how much it will cost you. 
+// Each letter has a default price of £30, but that can be different if you are given 2 parameters instead of 1.
+
+// You can not use multiplier "*" operator.
+
+// If your name would be Jeong-Ho Aristotelis, ad would cost £600. 20 leters * 30 = 600 
+// (Space counts as a letter).
+
+
+// const nameToCalculate = 'Jeong-Ho Aristotelis'
+
+
+// ------------- 1-st varian "for" ------------ //
+
+// function billboard(name, price = 30){
+//   let finalPrice = 0
+//   const array = name.split('')
+//   const arrayLength = array.length
+//   for(let i = 0; i < arrayLength; i += 1){
+//     finalPrice += price
+//   }
+//   return  finalPrice
+// } 
+ 
+
+// console.log(billboard(nameToCalculate))
+
+ 
+// ------------- 2-st varian "reduce" ------------ //
+
+// function billboard(name, price = 30){
+  
+//   return  name.split('').reduce((acc) => acc + price,0)
+// } 
+
+
+// console.log(billboard(nameToCalculate))
+
+
+
+
+/*
+ * Cat years, Dog years
+ */
+
+
+// let humanYearsCatYearsDogYears = function(humanYears) {
+//   if(humanYears === 1){
+//   const humanYearsConverted =  humanYears
+//   const catYears = humanYears * 15
+//   const dogYears = humanYears * 15
+//   return [humanYearsConverted,catYears,dogYears];
+//   } else if(humanYears === 2){
+//     const humanYearsConverted =  humanYears
+//     const catYears = 24
+//     const dogYears = 24
+//     return [humanYearsConverted,catYears,dogYears];
+//   } else if(humanYears > 2) {
+//     const humanYearsConverted =  humanYears
+//     const catYears = 24 + (humanYears - 2) * 4
+//     const dogYears = 24 + (humanYears - 2) * 5
+//     return [humanYearsConverted,catYears,dogYears];
+//   }
+  
+// }
+
+//  console.log(humanYearsCatYearsDogYears(1))
+//  console.log(humanYearsCatYearsDogYears(2))
+//  console.log(humanYearsCatYearsDogYears(10))
+
+ 
+
+
+// humanYears >= 1
+// humanYears are whole numbers only
+
+// Cat Years
+// 15 cat years for first year
+// +9 cat years for second year
+// +4 cat years for each year after that
+
+// Dog Years
+// 15 dog years for first year
+// +9 dog years for second year
+// +5 dog years for each year after that
+
+
+/*
+ * Plural
+ */
+
+
+function plural(n) {
+  if(n >= 0 && n < 1){
+    return true
+  } else if(n === 1) {
+    return false
+  } else if(n > 1) {
+    return true
+  }else if(n === Infinity) {
+    return true
   }
+  
 }
 
+console.log(plural(0))
+console.log(plural(0.5))
+console.log(plural(1))
+console.log(plural(100))
+console.log(plural(Infinity))
 
-even_or_odd(2)
-even_or_odd(3)
+// describe("Tests", () => {
+//   it("test", () => {
+// Test.assertEquals(plural(0), true, "Plural for 0");
+// Test.assertEquals(plural(0.5), true, "Plural for 0.5");
+// Test.assertEquals(plural(1), false, "Plural for 1");
+// Test.assertEquals(plural(100), true, "Plural for 100");
+// Test.assertEquals(plural(Infinity), true, "Plural for Infinity");
+
+//   });
+// });
