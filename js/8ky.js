@@ -302,18 +302,18 @@
 // '0' and '?' returns -1
 
 
-function sameCase(a, b){
-  if (typeof a !== 'string' || typeof b !== 'string'){
-    return -1;
-  } else if(a.toLowerCase() === a &&  b.toLowerCase()  === b) {
-    return 1
-  }
-  else if(a.toUpperCase() === a &&  b.toUpperCase()  === b) {
-    return 1
-  } else {
-    return 0
-  }
-}
+// function sameCase(a, b){
+//   if (typeof a !== 'string' || typeof b !== 'string'){
+//     return -1;
+//   } else if(a.toLowerCase() === a &&  b.toLowerCase()  === b) {
+//     return 1
+//   }
+//   else if(a.toUpperCase() === a &&  b.toUpperCase()  === b) {
+//     return 1
+//   } else {
+//     return 0
+//   }
+// }
 
 // console.log(sameCase('A', '0'))
 // console.log(sameCase(1, 'S'))
@@ -470,7 +470,7 @@ function sameCase(a, b){
 
 
 
-const lst = [3, 5, 8, 13];
+// const lst = [3, 5, 8, 13];
 
 // -------- 1-st varian 'for' -------- // 
 
@@ -677,24 +677,24 @@ const lst = [3, 5, 8, 13];
  */
 
 
-function plural(n) {
-  if(n >= 0 && n < 1){
-    return true
-  } else if(n === 1) {
-    return false
-  } else if(n > 1) {
-    return true
-  }else if(n === Infinity) {
-    return true
-  }
+// function plural(n) {
+//   if(n >= 0 && n < 1){
+//     return true
+//   } else if(n === 1) {
+//     return false
+//   } else if(n > 1) {
+//     return true
+//   }else if(n === Infinity) {
+//     return true
+//   }
   
-}
+// }
 
-console.log(plural(0))
-console.log(plural(0.5))
-console.log(plural(1))
-console.log(plural(100))
-console.log(plural(Infinity))
+// console.log(plural(0))
+// console.log(plural(0.5))
+// console.log(plural(1))
+// console.log(plural(100))
+// console.log(plural(Infinity))
 
 // describe("Tests", () => {
 //   it("test", () => {
@@ -706,3 +706,146 @@ console.log(plural(Infinity))
 
 //   });
 // });
+
+
+/*
+ * CSV representation of array
+ */
+
+// input:
+//    [[ 0, 1, 2, 3, 4 ],
+//     [ 10,11,12,13,14 ],
+//     [ 20,21,22,23,24 ],
+//     [ 30,31,32,33,34 ]] 
+    
+// output:
+//      '0,1,2,3,4\n'
+//     +'10,11,12,13,14\n'
+//     +'20,21,22,23,24\n'
+//     +'30,31,32,33,34'
+
+//     const array = [[ 0, 1, 2, 3, 4 ],
+//         [ 10,11,12,13,14 ],
+//         [ 20,21,22,23,24 ],
+//         [ 30,31,32,33,34 ]] 
+
+// function toCsvText(array) {
+   
+//   return array.join('\n')  
+// }
+
+
+// console.log(toCsvText(array))
+
+
+
+/*
+ * FIXME: Replace all dots
+ */
+
+// const replaceDots = function(str) {
+//   if(str === undefined || str === null) {
+//     return 'Sorry, try again :-(")'
+//   } else {
+//     return str.replace(/[.]/g, '-')
+//   }
+  
+// }
+
+// console.log(replaceDots("one.one.one"))
+
+
+/*
+ *  Name Shuffler
+ */
+
+// const nameToChange1 = "Miguel O'Reily"
+// const nameToChange2 = "Vernon O'Reily"
+// const nameToChange3 = "Ryan O'Reily"
+
+   
+
+// function nameShuffler(str){
+//   const re = /(\w+)\s(\w+)/;
+  
+//  return  str.replace(/^([^\s]+)(\s+)([^\s]+)/, '$3$2$1')
+   
+  
+// }
+
+// console.log(nameShuffler(nameToChange1))
+// console.log(nameShuffler(nameToChange2))
+// console.log(nameShuffler(nameToChange3))
+ 
+
+ /*
+ *  Double Char
+ */
+
+
+//  const string = "String"
+//  const phrase = "Hello World"
+//  const numbers = "1234!_ " 
+// * "String"      -> "SSttrriinngg"
+// * "Hello World" -> "HHeelllloo  WWoorrlldd"
+// * "1234!_ "     -> "11223344!!__  "
+
+// function doubleChar(str) {
+//    const array = str.split('')
+//    const newArray = array.map(el => el + el)
+//     return newArray.join('')
+// }
+
+
+// console.log(doubleChar(string))
+
+
+
+ /*
+  * Grasshopper - Debug sayHello
+  */
+
+
+//  function sayHello(name) {
+//   return `Hello, ${name}`
+// }
+
+// console.log(sayHello('Mr. Spock'))
+
+
+
+ /*
+  * Square(n) Sum
+  */
+
+//  function squareSum(numbers){
+//   return numbers.reduce((acc, currVal, i, arr) => acc + Math.pow(currVal, 2), 0)
+// }
+
+// console.log(squareSum([0, 3, 4, 5]))
+
+ /*
+  * Fake Binary
+  */
+
+ const numbers = '45385593107843568'
+
+ function fakeBin(x){
+    const newArray = x.split('')
+    for(let i = 0; i < newArray.length; i += 1){
+      if(newArray[i] < 5) {
+        newArray[i] = 0
+      } else {
+        newArray[i] = 1
+      }
+    }
+    return newArray.join('')
+}
+
+console.log(fakeBin(numbers))
+
+
+// const arr = numbers.split('')
+// console.log(arr.filter(el => el < 5))
+
+
